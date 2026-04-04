@@ -1,0 +1,7 @@
+#include "include/say_hello.h"
+# Create a new option in menuconfig
+config SAY_HELLO
+    bool "Basic print test to console"
+    default n
+    help
+        Add say_hello() function to print a basic message to the console
