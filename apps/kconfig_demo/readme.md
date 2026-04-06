@@ -5,7 +5,6 @@
 ### 1. Quản lý cấu hình dự án 
     
     - Cho phép bật/tắt các tính năng hệ thống thông qua giao diện cấu hình khi chạy 
-    - 
 ```
     idf.py menuconfig
 ```
