@@ -1,0 +1,27 @@
+---
+name: bm22s2021
+description: ESP-IDF driver for BM22S2021-1 smoke detector digital sensor (UART) 
+version: 0.0.1
+groups:
+  - sensors
+code_owners: DucAnh
+depends:
+  - driver
+  - log
+thread_safe: n/a
+targets:
+  - esp32
+  - esp8266
+  - esp32s2
+  - esp32c3
+  - esp32s3
+  - esp32c2
+  - esp32c6
+  - esp32h2
+  - esp32p4
+  - esp32c5
+  - esp32c61
+license: ISC
+copyrights:
+  - name: DucAnh
+    year: 2026
