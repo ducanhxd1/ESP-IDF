@@ -1,0 +1,24 @@
+#pragma once
+
+// BM22S2021 — UART
+#define SMOKE_UART_PORT    UART_NUM_1
+#define SMOKE_TX_PIN       GPIO_NUM_16
+#define SMOKE_RX_PIN       GPIO_NUM_17
+#define SMOKE_STATUS_PIN   GPIO_NUM_32
+
+// SHT3x — I2C
+// #define CLIMATE_I2C_PORT   I2C_NUM_0
+// #define CLIMATE_SDA_PIN    GPIO_NUM_21
+// #define CLIMATE_SCL_PIN    GPIO_NUM_22
+
+#define CONFIG_EXAMPLE_SHT3X_ADDR       0x44
+#define CONFIG_EXAMPLE_I2C_MASTER_SDA   21
+#define CONFIG_EXAMPLE_I2C_MASTER_SCL   22
+
+// ILI9225 — SPI
+#define LCD_SPI_HOST       SPI2_HOST
+#define LCD_MOSI_PIN       GPIO_NUM_23
+#define LCD_SCLK_PIN       GPIO_NUM_18
+#define LCD_CS_PIN         GPIO_NUM_5
+#define LCD_RS_PIN         GPIO_NUM_4
+#define LCD_RST_PIN        GPIO_NUM_2

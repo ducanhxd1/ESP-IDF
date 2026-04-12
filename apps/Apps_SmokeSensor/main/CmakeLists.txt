@@ -1,0 +1,48 @@
+# idf_component_register(
+#     SRCS "main.c"
+#     INCLUDE_DIRS ""
+# )
+
+# ============================================================
+# CMakeLists.txt — main component
+# "main" trong ESP-IDF là một component đặc biệt:
+#   - Luôn được build (entry point của app).
+#   - Tên cố định là "main", không đổi được.
+# ============================================================
+
+# idf_component_register() là macro chính của ESP-IDF CMake.
+# Nó thay thế hoàn toàn add_library() của CMake thuần.
+idf_component_register(
+
+    # SRCS — danh sách tất cả file .c cần biên dịch trong component này.
+    # Đường dẫn tương đối so với thư mục chứa CMakeLists.txt này.
+    SRCS
+        "main.c"
+        "tasks/task_smoke.c"
+        "tasks/task_sht31.c"
+        "tasks/task_display.c"
+
+    # INCLUDE_DIRS — thư mục chứa header (.h) PUBLIC của component này.
+    # Các component khác REQUIRES "main" sẽ tự động thấy thư mục này.
+    # Dấu "." nghĩa là thư mục hiện tại (main/).
+    # "include" là thư mục con chứa app_config.h và shared_data.h.
+    INCLUDE_DIRS
+        "."
+        "include"
+
+    # REQUIRES — danh sách các component mà "main" phụ thuộc vào.
+    # ESP-IDF sẽ tự động link các thư viện này vào binary.
+    #
+    # - "bm22s2021" : driver cảm biến khói (component tự tạo)
+    # - "sht3x"     : driver cảm biến nhiệt độ/độ ẩm (component tự tạo)
+    # - "ili9225"   : driver màn hình TFT (component tự tạo)
+    # - "freertos"  : FreeRTOS kernel (built-in ESP-IDF)
+    # - "driver"    : HAL drivers GPIO/UART/I2C/SPI (built-in ESP-IDF)
+    # - "log"       : ESP_LOGI/LOGE/LOGW macros (built-in ESP-IDF)
+    REQUIRES
+        bm22s2021
+        sht3x
+        freertos
+        driver
+        log
+)
